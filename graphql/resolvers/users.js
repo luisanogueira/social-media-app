@@ -12,9 +12,9 @@ const User = require('../../models/User');
 function generateToken(user) {
     return jwt.sign(
         {
-            id: res.id,
-            email: res.email,
-            username: res.username
+            id: user.id,
+            email: user.email,
+            username: user.username
         }, 
         SECRET_KEY, 
         { expiresIn: '1h'}
@@ -92,6 +92,7 @@ module.exports = {
                 id: res._id, 
                 token
             };
-        }
+        },
+    
     }
 };
